@@ -1,6 +1,5 @@
 package org.example.rest.controller.state;
 
-import lombok.RequiredArgsConstructor;
 import org.example.domain.data.state.StateEntity;
 import org.example.domain.service.state.StateService;
 import org.example.rest.controller.response.ResponseDto;
@@ -10,13 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/state")
-public class StateController {
-
-    private final StateService service;
-    private final StateMapper mapper;
+public record StateController(
+        StateService service,
+        StateMapper mapper
+) {
 
     @GetMapping
     public ResponseDto<List<StateDto>> findAll() {
