@@ -25,6 +25,6 @@ public class AddressSaveDto {
     @NotNull(message = "O campo estado é obrigatório")
     private SimpleAssociationDto state;
 
-    @NotNull(message = "O campo estado é obrigatório")
+    @NotNull(message = "O campo cidade é obrigatório")
     private SimpleAssociationDto city;
 }

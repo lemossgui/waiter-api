@@ -18,8 +18,21 @@ public class ResponseDto<T> {
     private String message;
     private String status;
 
+    @Nullable
+    private Integer totalPages;
+
+    @Nullable
+    private Integer totalItems;
+
     public ResponseDto(@Nullable T params) {
         this.params = params;
+        this.status = StatusResponse.SUCCESS.getValue();
+    }
+
+    public ResponseDto(@Nullable T params, @Nullable Integer totalPages, @Nullable Integer totalItems) {
+        this.params = params;
+        this.totalPages = totalPages;
+        this.totalItems = totalItems;
         this.status = StatusResponse.SUCCESS.getValue();
     }
 
