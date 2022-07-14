@@ -14,11 +14,4 @@ public class CategoryMapper extends AbstractMapper<CategoryEntity, CategoryDto> 
                 entity.getDescription()
         );
     }
-
-    @Override
-    public CategoryEntity mapToEntity(CategoryDto dto) {
-        return new CategoryEntity(
-                dto.getDescription()
-        );
-    }
 }

@@ -27,6 +27,10 @@ public class CityEntity extends AbstractEntity {
     @JsonBackReference
     private StateEntity state;
 
+    public CityEntity(Long id) {
+        super(id);
+    }
+
     public CityEntity(String description) {
         this.description = description;
     }

@@ -8,17 +8,16 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class StateMapper extends AbstractMapper<StateEntity, StateDto> {
+public class StateSimpleDtoMapper extends AbstractMapper<StateEntity, StateSimpleDto> {
 
     private final CityMapper cityMapper;
 
     @Override
-    public StateDto mapToDto(StateEntity entity) {
-        return new StateDto(
+    public StateSimpleDto mapToDto(StateEntity entity) {
+        return new StateSimpleDto(
                 entity.getId(),
                 entity.getDescription(),
-                entity.getUf(),
-                cityMapper.mapToListDto(entity.getCities())
+                entity.getUf()
         );
     }
 }

@@ -29,6 +29,10 @@ public class StateEntity extends AbstractEntity {
     @JsonManagedReference
     private List<CityEntity> cities;
 
+    public StateEntity(Long id) {
+        super(id);
+    }
+
     public StateEntity(String description, String uf) {
         this.description = description;
         this.uf = uf;

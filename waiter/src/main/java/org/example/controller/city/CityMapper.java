@@ -14,11 +14,4 @@ public class CityMapper extends AbstractMapper<CityEntity, CityDto> {
                 entity.getDescription()
         );
     }
-
-    @Override
-    public CityEntity mapToEntity(CityDto dto) {
-        return new CityEntity(
-                dto.getDescription()
-        );
-    }
 }
