@@ -1,5 +1,6 @@
 package org.example.rest.state;
 
+import lombok.RequiredArgsConstructor;
 import org.example.domain.state.StateEntity;
 import org.example.service.state.StateService;
 import org.example.rest.response.ResponseDto;
@@ -11,10 +12,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/state")
-public record StateController(
-        StateService service,
-        StateMapper mapper
-) {
+@RequiredArgsConstructor
+public class StateController {
+
+    private final StateService service;
+    private final StateMapper mapper;
 
     @GetMapping
     public ResponseDto<List<StateDto>> findAll() {
