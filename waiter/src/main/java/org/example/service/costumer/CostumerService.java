@@ -1,6 +1,6 @@
 package org.example.service.costumer;
 
-import org.example.data.costumer.CostumerEntity;
+import org.example.domain.costumer.CostumerEntity;
 import org.springframework.stereotype.Service;
 
 @Service

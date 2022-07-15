@@ -1,7 +1,7 @@
 package org.example.service.state;
 
-import org.example.data.state.StateEntity;
-import org.example.data.state.StateRepository;
+import org.example.domain.state.StateEntity;
+import org.example.domain.state.StateRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

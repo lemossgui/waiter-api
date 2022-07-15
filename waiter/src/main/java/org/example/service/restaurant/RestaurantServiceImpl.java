@@ -1,10 +1,11 @@
 package org.example.service.restaurant;
 
 import lombok.RequiredArgsConstructor;
-import org.example.controller.exception.NotFoundException;
-import org.example.data.address.AddressRepository;
-import org.example.data.restaurant.RestaurantEntity;
-import org.example.data.restaurant.RestaurantRepository;
+import org.example.rest.exception.NotFoundException;
+import org.example.domain.address.AddressRepository;
+import org.example.domain.restaurant.RestaurantEntity;
+import org.example.domain.restaurant.RestaurantRepository;
+import org.example.utils.CryptUtils;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.Page;
@@ -25,6 +26,7 @@ public class RestaurantServiceImpl implements RestaurantService {
     @Transactional
     public void save(RestaurantEntity entity) {
         addressRepository.save(entity.getAddress());
+        entity.setPassword(CryptUtils.md5(entity.getPassword()));
         repository.save(entity);
     }
 

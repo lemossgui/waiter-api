@@ -1,6 +1,6 @@
 package org.example.service.restaurant;
 
-import org.example.data.restaurant.RestaurantEntity;
+import org.example.domain.restaurant.RestaurantEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

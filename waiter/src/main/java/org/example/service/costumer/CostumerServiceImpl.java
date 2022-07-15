@@ -1,10 +1,11 @@
 package org.example.service.costumer;
 
 import lombok.RequiredArgsConstructor;
-import org.example.controller.exception.NotFoundException;
-import org.example.data.address.AddressRepository;
-import org.example.data.costumer.CostumerEntity;
-import org.example.data.costumer.CostumerRepository;
+import org.example.domain.address.AddressRepository;
+import org.example.domain.costumer.CostumerEntity;
+import org.example.domain.costumer.CostumerRepository;
+import org.example.rest.exception.NotFoundException;
+import org.example.utils.CryptUtils;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -21,6 +22,7 @@ public class CostumerServiceImpl implements CostumerService {
     @Transactional
     public void save(CostumerEntity entity) {
         addressRepository.save(entity.getAddress());
+        entity.setPassword(CryptUtils.md5(entity.getPassword()));
         repository.save(entity);
     }
 

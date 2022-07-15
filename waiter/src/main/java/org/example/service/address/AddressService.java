@@ -1,6 +1,6 @@
 package org.example.service.address;
 
-import org.example.data.address.AddressEntity;
+import org.example.domain.address.AddressEntity;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -15,5 +15,5 @@ server:
     min-response-size: 1
 
 jwt:
-  expiration-days: 30
+  expiration: 30
   secret: 2!2_One*Ring#To$Rule%Them-All_7+9

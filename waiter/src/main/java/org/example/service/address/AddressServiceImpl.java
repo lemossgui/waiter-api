@@ -1,9 +1,9 @@
 package org.example.service.address;
 
 import lombok.RequiredArgsConstructor;
-import org.example.controller.exception.NotFoundException;
-import org.example.data.address.AddressEntity;
-import org.example.data.address.AddressRepository;
+import org.example.rest.exception.NotFoundException;
+import org.example.domain.address.AddressEntity;
+import org.example.domain.address.AddressRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
